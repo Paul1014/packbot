@@ -1,3 +1,4 @@
 import PAPI
-a = PAPI.getPlace('ChIJdzk4JD5OXTQRMmdTBMmkxFs')
-print(a)
+a = PAPI.getSearch('台北車站')['result']
+
+print(a['rating'])

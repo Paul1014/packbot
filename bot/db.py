@@ -1,11 +1,10 @@
 import sqlite3
 
-
 def setTname(data):
- 	connection = sqlite3.connect('db/test.db')
- 	c = connection.cursor()
- 	c.execute('insert into User(UserID, Tname) values (?,?)', data)
- 	connection.commit()
+	connection = sqlite3.connect('db/test.db')
+	c = connection.cursor()
+	c.execute('insert into User(UserID, Tname) values (?,?)', data)
+	connection.commit()
 
 def setCOUNTY(data):
 	connection = sqlite3.connect('db/test.db')
@@ -57,16 +56,12 @@ def setPlacedetail(data):
 	c.execute('insert into Place(PlaceName, Address, Rating, Phone, Time) values (?,?,?,?,?)',data)
 	connection.commit()
 
-
-
-
 def getTYPE(data): #input list type
 	connection = sqlite3.connect('db/test.db')
 	c = connection.cursor()
 	c.execute("SELECT TYPE_one, TYPE_two, TYPE_three FROM User WHERE UserID LIKE? AND Tname LIKE?",data)
 	types = c.fetchone()
 	return types #return is tunple type
-
 
 def getCOUNTY(data):
 	connection = sqlite3.connect('db/test.db')
@@ -98,11 +93,11 @@ def getTnames(data):
 
 	return Tnames
 
-
-
 def Deleterecord(ID):
 	connection = sqlite3.connect('db/test.db')
 	c = connection.cursor()
 	c.execute("DELETE FROM User WHERE UserID LIKE? ",ID)
 	connection.commit()
 
+print(getTnames(['1144120088']))
+#print(getPlaceDetail( ['臺北市兒童新樂園'] ))

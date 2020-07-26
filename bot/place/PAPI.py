@@ -93,3 +93,10 @@ def getPlace(a):
             d = e['location']
             c.update(d)
     return c
+
+def getSearch(place):
+    
+    getS = gmaps.find_place(input=place, input_type='textquery', language='zh-TW')
+    place_info = getS['candidates'][0]
+    getP = gmaps.place(place_id=place_info['place_id'], fields=['name', 'formatted_address', 'formatted_phone_number', 'geometry/location', 'opening_hours', 'user_ratings_total', 'rating'] ,language='zh-TW')
+    return getP
