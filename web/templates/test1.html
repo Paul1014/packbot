@@ -1,0 +1,16 @@
+<!-- 宣告我們要套用模板 -->
+{% extends "index.html" %}
+
+{% block title %}{{ TravelName }}{% endblock %}
+
+
+
+{% block title3 %}{{ TravelName }}{% endblock %}
+
+{% block Sights %}
+    <a href="details2.html">
+        <p class="Sights">景點名稱：{{ places[0] }}</p>
+        <p class="Sights_address">地址：台北市信義區仁愛路四段505號</p>
+        <p class="Sights">停留時間：2小時</p>
+    </a>
+{% endblock %}

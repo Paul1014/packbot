@@ -1,0 +1,18 @@
+<!-- 宣告我們要套用模板 -->
+{% extends "base.html" %}
+
+{% block title %}使用者{% endblock %}
+
+{% block main %}
+<div class="jumbotron">
+    中間略
+</div>
+<div class="container">
+    <ul>
+    {% for user in users %}
+        <li><a href="{{ user.url }}">{{ user.username }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

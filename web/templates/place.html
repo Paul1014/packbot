@@ -1,0 +1,15 @@
+<!-- 宣告我們要套用模板 -->
+{% extends "base.html" %}
+
+{% block title %}{{ TravelName }}{% endblock %}
+
+{% block main %}
+<div class="container">
+    <ul>
+    {% for place in places %}
+        <li>list : {{ place }}</li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
